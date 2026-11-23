@@ -560,6 +560,14 @@ function buildRecord(p, code, cache) {
   const detailFile = path.join(OUT_DIR, `CMA价格明细_${tag}${stamp}.csv`);
   const jsonFile = path.join(OUT_DIR, `CMA价格_${tag}${stamp}.json`);
 
+  if (!kept.length) {
+    console.log('');
+    console.log('本次没有任何有效报价，已跳过写文件，保留上一次的数据。');
+    console.log('常见原因：登录未完成、接口限流、或开船日下限过滤掉了全部航次。');
+    process.exitCode = 2;
+    return;
+  }
+
   writeCSV(mainFile, ['分组', '目的港', '20GP', '40HQ', '海运费20GP', '海运费40HQ', '附加费20GP', '附加费40HQ', '重柜费20GP', '重柜费40HQ', '最快离港20GP', '最快离港40HQ', '最快离港船期', '预计开船', '航程天数', '中转港', '船名', '航次', '港口代码', '目的港全名', '国家', '总航次数', '报价有效期起', '状态', '备注'], kept);
   writeCSV(detailFile, ['分组', '目的港', '港口代码', '船名', '航次', '预计开船', '预计到港', '航程天数', '中转港', '20GP', '40HQ', '重柜费20GP', '舱位', '船期', '有效期起', 'OfferId'], keptDetails);
   fs.writeFileSync(jsonFile, JSON.stringify({ generated: new Date().toISOString(), pol: OPT.pol, sort: OPT.sort, results: kept, allResults: results, details: keptDetails }, null, 2), 'utf8');

@@ -281,8 +281,17 @@ def main():
         sources = []
         for r in ("非洲", "中南美", "地中海黑海"):
             cands = [f for f in glob.glob(os.path.join(HERE, "output", f"CMA价格_{r}_*.json")) if "明细" not in f]
-            if cands:
-                sources.append(max(cands, key=os.path.getmtime))
+            # 只取「有数据」的最新一份，避免某次失败的空结果把表冲成 0 个港
+            good = []
+            for f in cands:
+                try:
+                    with open(f, encoding="utf-8") as fh:
+                        if json.load(fh).get("results"):
+                            good.append(f)
+                except Exception:
+                    pass
+            if good:
+                sources.append(max(good, key=os.path.getmtime))
         if not sources:
             print('output 目录里没有 CMA价格_*.json，先双击「更新价格.bat」查一次')
             sys.exit(1)
