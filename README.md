@@ -56,6 +56,8 @@ pip install openpyxl
 
 把 `settings.example.json` 复制为 `settings.json` 后按需修改。
 
+不想装环境？到 [Releases](https://github.com/Akash1QWQ/cma-spoton-suite/releases) 下载便携版压缩包，解压后双击 `报价助手.vbs` 即可运行，无需安装 Node 与 Python。
+
 ### 核心实现
 
 1. 私有接口直接请求返回 403，改为在已登录页面内调用，携带同源 Cookie 与 CSRF；
@@ -133,6 +135,8 @@ pip install openpyxl
 ```
 
 Copy `settings.example.json` to `settings.json` and adjust as needed.
+
+Prefer no setup? Download the portable package from [Releases](https://github.com/Akash1QWQ/cma-spoton-suite/releases), unzip it and double-click `报价助手.vbs` — no Node.js or Python installation required.
 
 ### Implementation Notes
 
