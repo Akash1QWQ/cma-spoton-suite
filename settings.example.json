@@ -1,0 +1,7 @@
+{
+  "pol": "CNXMN",
+  "minEtdDays": 3,
+  "weight": 25000,
+  "keepAlive": true,
+  "keepAliveMinutes": 5
+}

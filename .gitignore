@@ -1,0 +1,39 @@
+# 登录态与浏览器配置（绝对不能提交，含 CMA Cookie）
+.auth-state.json
+.browser-profile/
+.tmp/
+
+# 运行时状态与缓存
+output/.watch_lock
+output/.watch_state.json
+output/.inland_cache.json
+output/.contract_state.json
+output/.contract_payloads.json
+output/.contract_renew.json
+output/.lastrun.json
+
+# 生成的业务数据（报价表、合约记录、后段表、缓存）
+output/
+
+# 本地设置（含个人默认值，模板见 settings.example.json）
+settings.json
+
+# 运行环境（按 README 安装，不入库）
+runtime/
+node_modules/
+__pycache__/
+*.pyc
+
+# 便携版与打包产物
+CMA报价程序-便携版*/
+*.zip
+
+# 系统与编辑器
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# ����� PDF���������ĵ�������ֿ�ַ���
+dd/pdfs/

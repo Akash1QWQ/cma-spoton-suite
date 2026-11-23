@@ -1,0 +1,161 @@
+﻿区域,分组,原表写法,查询名,港口代码,国家
+非洲,西非南部港口,Luanda / Angola 安哥拉/罗安达 15,Luanda,AOLAD,Angola
+非洲,西非南部港口,Pointe Noire / Congo 刚果（布）黑角 14,Pointe Noire,CGPNR,Congo
+非洲,西非南部港口,Libreville / Gabon 加蓬/利伯维尔 11+3,Libreville,GALBV,Gabon
+非洲,西非南部港口,Matadi / Congo 刚果（金）/马塔迪 32,Matadi,CDMAT,Congo
+非洲,西非南部港口,Boma / Congo 刚果（金）/博马,Boma,CDBOA,Congo
+非洲,西非南部港口,Walvis Bay / Namibia 鲸湾港 14,Walvis Bay,NAWVB,Namibia
+非洲,西非南部港口,KRIBI / Cameroon 喀麦隆/克里比 11+2,KRIBI,CMKBI,Cameroon
+非洲,西非南部港口,Douala / Cameroon 喀麦隆/杜阿拉 11+2,Douala,CMDLA,Cameroon
+非洲,西非南部港口,PORT GENTIL/ Gabon 加蓬/让蒂尔港,PORT GENTIL,GAPOG,Gabon
+非洲,西非南部港口,Lobito / Angola 安哥拉/洛比托,Lobito,AOLOB,Angola
+非洲,西非南部港口,CABINDA / Angola 安哥拉/卡宾达 15,CABINDA,AOCAB,Angola
+非洲,西非南部港口,BANANA / Congo 刚果（金）/,BANANA,CDBNW,Congo
+非洲,西非南部港口,Namibe / Angola 安哥拉/纳米比,Namibe,AOMSZ,Angola
+非洲,西非中部港口,Apapa / Tincan / Nigeria 阿帕帕 14,Apapa,NGAPP,Tincan|Nigeria
+非洲,西非中部港口,Tincan / Tincan / Nigeria 庭坎 14,Tincan,NGTIN,Tincan|Nigeria
+非洲,西非中部港口,LEKKI / Nigeria 莱基/尼日尼亚 14,LEKKI,NGLKK,Nigeria
+非洲,西非中部港口,ONNE / Nigeria 奥纳/尼日尼亚 14,ONNE,NGONN,Nigeria
+非洲,西非中部港口,Cotonou / Benin 贝宁/科托努 14,Cotonou,BJCOO,Benin
+非洲,西非中部港口,Lome / Togo 多哥/洛美 14,Lome,TGLFW,Togo
+非洲,西非中部港口,Abidjan / Cote D'ivoire 阿比让/科特迪瓦 7+7,Abidjan,CIABJ,Cote D'ivoire
+非洲,西非中部港口,Tema / Ghana 加纳/特马 14 小柜18T+300,Tema,GHTEM,Ghana
+非洲,西非中部港口,Takoradi / Ghana 加纳/科特拉迪,Takoradi,GHTKD,Ghana
+非洲,西非中部港口,Bata / Malabo 赤道几内亚 14,Bata,GQBSG,Malabo
+非洲,西非北部港口,Dakar / Senegal 塞内加尔/达喀尔 10+5,Dakar,SNDKR,Senegal
+非洲,西非北部港口,Banjul / Gambia 冈比亚/班珠尔 8+3,Banjul,GMBJL,Gambia
+非洲,西非北部港口,Conakry / Guinea 几内亚/科纳克里 8+4,Conakry,GNCKY,Guinea
+非洲,西非北部港口,Freetown / Sierra Leone 弗里敦 14,Freetown,SLFNA,Sierra Leone
+非洲,西非北部港口,Monrovia / Liberia 利比里亚/蒙罗维亚 12+7,Monrovia,LRMLW,Liberia
+非洲,西非北部港口,Nouakchott / Mauritania 努瓦克肖特 14,Nouakchott,MRNKC,Mauritania
+非洲,西非北部港口,Nouadhibou / Mauritania 努瓦迪布,Nouadhibou,MRNDB,Mauritania
+非洲,西非北部港口,Praia / Cabo Verde 佛得角/普拉亚,Praia,CVRAI,Cabo Verde
+非洲,西非北部港口,Mindelo / Cabo Verde 佛得角/明德卢,Mindelo,CVMIN,Cabo Verde
+非洲,西非北部港口,Bissau / Guinea 几内亚/比绍 10+10,Bissau,GWOXB,Guinea
+非洲,西非北部港口,Sao Tome 圣多美和普林西比/圣多美,Sao Tome,STTMS,
+非洲,TZ/KE东非线,Mombasa / Kenya 14,Mombasa,KEMBA,Kenya
+非洲,TZ/KE东非线,Dar es salaam / Tanzania 14,Dar es salaam,TZDAR,Tanzania
+非洲,TZ/KE东非线,Zanzibar / Tanzania 14,Zanzibar,TZZNZ,Tanzania
+非洲,Niche PODs东非线,"Port Victoria,Seychelles 塞舌尔 10",Port Victoria,SCPOV,Seychelles
+非洲,Niche PODs东非线,Male / Maldives 马尔代夫/马累 10,Male,MVMLE,Maldives
+非洲,Niche PODs东非线,Mogadishu / Somalia 摩加迪沙 21,Mogadishu,SOMGQ,Somalia
+非洲,Niche PODs东非线,Kismayu 基斯马尤 摩加迪沙 21,Kismayu,SOKMU,
+非洲,MOZEX莫桑比克线,Beira / Mozambique 贝拉 14,Beira,MZBEW,Mozambique
+非洲,MOZEX莫桑比克线,Maputo / Mozambique 马普托 14,Maputo,MZMPM,Mozambique
+非洲,MOZEX莫桑比克线,Nacala / Mozambique 纳卡拉 14,Nacala,MZMNC,Mozambique
+非洲,马达加斯加线,Tamatave / Madagascar 塔马塔夫 13,Tamatave,MGTMM,Madagascar
+非洲,马达加斯加线,Pointe Des Galets 留尼汪岛 12,Pointe Des Galets,REPDG,
+非洲,马达加斯加线,Port Louis / Mauritius 7 小柜18T+USD500,Port Louis,MUPLU,Mauritius
+非洲,IO马达加斯加线,Diego Suarez 迭戈苏瓦雷斯,Diego Suarez,MGDIE,
+非洲,IO马达加斯加线,Nosy-Be 努西贝,Nosy-Be,MGNOS,
+非洲,IO马达加斯加线,Majunga 马任加,Majunga,MGMJN,
+非洲,IO马达加斯加线,Tulear 图利亚拉,Tulear,MGTLE,
+非洲,IO马达加斯加线,Ehoala 艾奥拉,Ehoala,MGEHL,
+非洲,IO马达加斯加线,Longoni / Mayotte 马约特/隆戈尼,Longoni,YTLON,Mayotte
+非洲,IO马达加斯加线,Moroni / Comoros 科摩罗/莫罗尼,Moroni,KMYVA,Comoros
+非洲,IO马达加斯加线,Mutsamudu/ Comoros 穆察穆杜,Mutsamudu,KMMUT,Comoros
+非洲,IO马达加斯加线,Mkoani / Tanzania 姆科阿尼,Mkoani,TZMKI,Tanzania
+非洲,南非线,DURBAN 德班/南非 14,DURBAN,ZADUR,
+非洲,南非线,CAPE TOWN 开普敦/南非 14,CAPE TOWN,ZACPT,
+非洲,南非线,PORT ELIZABETH(COEGA) 库哈港/南非 14,PORT ELIZABETH,ZAPLZ,
+中南美,中南美,"Panama(Manzanillo,PA/Balboa/Colon Free Zone)",Panama,PAMIT,
+中南美,中南美,Kingston/Caucedo (JMKIN/DOCAU),Kingston,JMKIN,
+中南美,中南美,Port of Spain/Point Lisas(TTPOS/TTPTS),Port of Spain,TTPOS,
+中南美,中南美,Rio Haina(DOHAI),Rio Haina,DOHAI,
+中南美,中南美,Cartagena(COCTG),Cartagena,COCTG,
+中南美,中南美,Santa Marta(COSMR),Santa Marta,COSMR,
+中南美,中南美,Barranquilla(COBAQ),Barranquilla,COBAQ,
+中南美,中南美,Turbo(COTRB),Turbo,COTRB,
+中南美,中南美,Puerto Cabello/La Guaira(VEPBL/VELAG),Puerto Cabello,VEPBL,
+中南美,中南美,Maracaibo/Guaranao/Guanta(VEMAR/VEGUB/VEGUT),Maracaibo,VEMAR,
+中南美,中南美,El Guamache(VEEGU),El Guamache,VEEGU,
+中南美,中南美,Manaus(BRMAO),Manaus,BRMAO,
+中南美,中南美,Lafito(HTLFF),Lafito,HTLFF,
+中南美,中南美,Cap Haitien(HTCAP),Cap Haitien,HTCAP,
+中南美,中南美,Puerto Cortes(HNPCR),Puerto Cortes,HNPCR,
+中南美,中南美,Puerto Moin(CRMOB),Puerto Moin,CRMOB,
+中南美,中南美,San Juan(PRSJU),San Juan,PRSJU,
+中南美,中南美,"Georgetown,GY/Paramaribo,SR(GYGEO/SRPBM)",Georgetown,GYGEO,
+中南美,中南美,Belize City(BZBZE),Belize City,BZBZE,
+中南美,中南美,Nassau(BSNAS),Nassau,BSNAS,
+中南美,中南美,Altamira/Veracruz(MXATM/MXVER),Altamira,MXATM,
+中南美,中南美,Progreso(MXPGO),Progreso,MXPGO,
+中南美,中南美,Mariel (CUMAR) DTHC:EUR250 预付,Mariel  DTHC:EUR250,CUMAR,
+中南美,中南美,POINTE A PITRE (GPPTP),POINTE A PITRE,GPPTP,
+中南美,中南美,FORT DE FRANCE(MQFDF),FORT DE FRANCE,MQFDF,
+中南美,中南美,PHILIPSBURG(ANPHI),PHILIPSBURG,ANPHI,
+中南美,中南美,GUSTAVIA(GPGUS),GUSTAVIA,GPGUS,
+中南美,中南美,DEGRAD DES CANNES(GFDDC),DEGRAD DES CANNES,GFDDC,
+中南美,中南美,"Manzanillo,MX(MXZLO)",Manzanillo,MXZLO,
+中南美,中南美,Lazaro Cardenas(MXLZC),Lazaro Cardenas,MXLZC,
+中南美,中南美,Callao(PECLL),Callao,PECLL,
+中南美,中南美,Buenaventura(COBUN),Buenaventura,COBUN,
+中南美,中南美,Chancay(PECHY),Chancay,PECHY,
+中南美,中南美,Posorja(ECPSJ),Posorja,ECPSJ,
+中南美,中南美,San Antonio(CLSAI),San Antonio,CLSAI,
+中南美,中南美,Ensenada(MXESE),Ensenada,MXESE,
+中南美,中南美,Lirquen(CLLQN),Lirquen,CLLQN,
+中南美,中南美,Arica(CLARI),Arica,CLARI,
+中南美,中南美,Iquique(CLIQQ),Iquique,CLIQQ,
+中南美,中南美,Puerto Quetzal(GTPRQ),Puerto Quetzal,GTPRQ,
+中南美,中南美,Acajutla(SVAQJ),Acajutla,SVAQJ,
+中南美,中南美,Corinto(NICIO),Corinto,NICIO,
+中南美,中南美,Puerto Caldera(CRCAL),Puerto Caldera,CRCAL,
+中南美,中南美,"Managua(NIMGA via NICIO,CY to Door)",Managua,NIMGA,
+中南美,中南美,Santos(BRSSZ),Santos,BRSSZ,
+中南美,中南美,Rio de Janeiro(BRRIO),Rio de Janeiro,BRRIO,
+中南美,中南美,Navegantes(BRNVT),Navegantes,BRNVT,
+中南美,中南美,Paranagua(BRPNG),Paranagua,BRPNG,
+中南美,中南美,Itapoa(BRIOA),Itapoa,BRIOA,
+中南美,中南美,Itajai(BRITJ),Itajai,BRITJ,
+中南美,中南美,Buenos Aires(ARBUE),Buenos Aires,ARBUE,
+中南美,中南美,Montevideo(UYMVD),Montevideo,UYMVD,
+中南美,中南美,Rio Grande(BRRIG),Rio Grande,BRRIG,
+中南美,中南美,Rosario(ARROS),Rosario,ARROS,
+中南美,中南美,Zarate(ARZAE),Zarate,ARZAE,
+中南美,中南美,Mar Del Plata(ARMDQ),Mar Del Plata,ARMDQ,
+中南美,中南美,Suape(BRSUA),Suape,BRSUA,
+中南美,中南美,Fortaleza(BRFOR),Fortaleza,BRFOR,
+中南美,中南美,Salvador(BRSSA),Salvador,BRSSA,
+中南美,中南美,Pecem(BRPEC),Pecem,BRPEC,
+中南美,中南美,Vitoria(BRVIX),Vitoria,BRVIX,
+中南美,中南美,Vila do Conde(BRVCO),Vila do Conde,BRVCO,
+中南美,中南美,Asuncion(PYASU),Asuncion,PYASU,
+地中海黑海,地西,BARCELONA,BARCELONA,ESBCN,Spain
+地中海黑海,地西,VALENCIA,VALENCIA,ESVLC,Spain
+地中海黑海,地西,ALGECIRAS,ALGECIRAS,ESALG,Spain
+地中海黑海,地西,NAPOLI,NAPOLI,ITNAP,Italy
+地中海黑海,地西,GENOA,GENOA,ITGOA,Italy
+地中海黑海,地西,LA SPEZIA,LA SPEZIA,ITSPE,Italy
+地中海黑海,地西,SALERNO,SALERNO,ITSAL,Italy
+地中海黑海,地西,VENICE,VENEZIA,ITVCE,Italy
+地中海黑海,地西,PIRAEUS,PIRAEUS,GRPIR,Greece
+地中海黑海,地西,THESSALONIKI,THESSALONIKI,GRSKG,Greece
+地中海黑海,土耳其,ISTANBUL,ISTANBUL,TRAVC,Turkiye
+地中海黑海,土耳其,IZMIT,IZMIT,TRIZT,Turkiye
+地中海黑海,土耳其,GEBZE,GEBZE,TRGEB,Turkiye
+地中海黑海,土耳其,IZMIR,IZMIR,TRIZM,Turkiye
+地中海黑海,土耳其,ALIAGA,ALIAGA,TRALI,Turkiye
+地中海黑海,土耳其,GEMLIK,GEMLIK,TRGEM,Turkiye
+地中海黑海,土耳其,MERSIN,MERSIN,TRMER,Turkiye
+地中海黑海,土耳其,ISKENDERUN,ISKENDERUN,TRISK,Turkiye
+地中海黑海,亚得里亚海,MALTA,MALTA,MTMLA,Malta
+地中海黑海,亚得里亚海,KOPER,KOPER,SIKOP,Slovenia
+地中海黑海,亚得里亚海,RIJEKA,RIJEKA,HRRJK,Croatia
+地中海黑海,亚得里亚海,TRIESTE,TRIESTE,ITTRS,Italy
+地中海黑海,亚得里亚海,DURRES,DURRES,ALDRZ,Albania
+地中海黑海,亚得里亚海,BAR,BAR,MEBAR,Montenegro
+地中海黑海,亚得里亚海,PLOCE,PLOCE,HRPLE,Croatia
+地中海黑海,黑海,CONSTANTA,CONSTANTA,ROCND,Romania
+地中海黑海,黑海,VARNA,VARNA,BGVAR,Bulgaria
+地中海黑海,黑海,BURGAS,BURGAS,BGBOJ,Bulgaria
+地中海黑海,黑海,POTI,POTI,GEPTI,Georgia
+地中海黑海,黑海,ODESA,ODESA,UAODS,Ukraine
+地中海黑海,埃及,ALEXANDRIA TMT,ALEXANDRIA,EGALY,Egypt
+地中海黑海,埃及,PORT SAID WEST,PORT SAID,EGPSD,Egypt
+地中海黑海,埃及,PORT SAID EAST,PORT SAID EAST,EGPSE,Egypt
+地中海黑海,埃及,DAMIETTA,DAMIETTA,EGDAM,Egypt
+地中海黑海,叙利亚,Lattakia,LATTAKIA,SYLTK,Syria
+地中海黑海,叙利亚,TARTOUS,TARTOUS,SYTTS,Syria
+地中海黑海,黎巴嫩,Beirut,BEIRUT,LBBEY,Lebanon
+地中海黑海,黎巴嫩,Tripoli,TRIPOLI,LBKYE,Lebanon

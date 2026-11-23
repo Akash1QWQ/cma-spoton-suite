@@ -1,0 +1,51 @@
+POD,FPOD,Mode,Max GW (20') tons,Max GW (40') tons
+Beira,Harare,Rail,23,30
+Beira,Harare,Rail,30,30
+Beira,Harare,Truck,30,30
+Durban,Harare,Truck,24,28
+Durban,Harare,Truck,28,28
+Mombasa,Kampala,Truck (to ramp),28,28
+Mombasa,Kampala,Truck (to door),28,28
+Dar Es Salaam,Kampala,Truck,27,29
+Mombasa,Kigali,Truck,28,28
+Dar Es Salaam,Kigali,Truck,27,29
+Beira,Lilongwe,Truck (to ramp),30,30
+Beira,Lilongwe,Truck (to door),30,30
+Nacala,Lilongwe,Truck (to door),30,30
+Nacala,Lilongwe,Truck (to ramp),30,30
+Nacala,Lilongwe,Rail (to ramp),24,30
+Nacala,Lilongwe,Rail (to ramp),30,30
+Dar Es Salaam,Lilongwe,Truck,27,29
+Beira,Lusaka,Truck,30,30
+Dar Es Salaam,Lusaka,Truck,27,29
+Dar Es Salaam,Lubumbashi,Truck,27,29
+Mombasa,Embakasi,Rail,30,34
+Mombasa,Embakasi,Rail,34,34
+Mombasa,Nairobi,Truck,28,28
+Mombasa,Nairobi,Rail,30,34
+Mombasa,Nairobi,Rail,34,34
+Nacala,Blantyre,Rail,24,23
+Nacala,Blantyre,Rail,30,30
+Nacala,Blantyre,Truck (to ramp),30,30
+Beira,Blantyre,Truck (to ramp),30,30
+Beira,Blantyre,Truck (to door),30,30
+Beira,Bulawayo,Truck,30,30
+Durban,Gaborone,Rail,24,29
+Durban,Gaborone,Rail,29,33
+Durban,Gaborone,Truck,24,28
+Durban,Gaborone,Truck,28,28
+Durban,Johannesburg,Rail,24,29
+Durban,Johannesburg,Rail,29,32
+Durban,Johannesburg,Truck,24,24
+Durban,Johannesburg,Truck,28,28
+Durban,Matsapha,Rail,24,29
+Durban,Matsapha,Rail,29,33
+Durban,Matsapha,Truck,24,24
+Durban,Matsapha,Truck,28,28
+Durban,Matsapha,Truck,30,28
+Maputo,Matsapha,Rail,25,25
+Maputo,Matsapha,Rail,30,30
+Maputo,Matsapha,Truck,30,30
+Dar Es Salaam,Bujumbura,Truck,27,29
+Beira,Kitwe,Truck,30,30
+Dar Es Salaam,Kitwe,Truck,27,29
