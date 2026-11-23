@@ -3,6 +3,10 @@
 > 基于 CMA CGM SpotOn 报价，实现的效率提升套件：批量抓价、报价单生成、满舱监控抢舱、内陆费用测算。
 > An efficiency suite built on CMA CGM SpotOn quoting: batch rate scraping, quotation generation, sold-out sailing monitoring with auto-grab, and inland cost calculation.
 
+![Node](https://img.shields.io/badge/Node-%E2%89%A518-339933?logo=node.js&logoColor=white)
+![License](https://img.shields.io/badge/License-PolyForm%20Noncommercial-blue)
+![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows)
+
 ---
 
 ## 中文
