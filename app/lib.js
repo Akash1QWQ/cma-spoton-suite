@@ -175,4 +175,4 @@ async function dismissSessionModal(page, opts = {}) {
   return true;
 }
 
-module.exports = { PROFILE_DIR, STATE_FILE, QUOTE_URL, isLoginUrl, launch, saveState, getPage, UA, dismissSessionModal };
+module.exports = { PROFILE_DIR, STATE_FILE, QUOTE_URL, isLoginUrl, launch, saveState, getPage, dismissSessionModal };
