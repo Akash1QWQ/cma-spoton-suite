@@ -54,7 +54,7 @@ pip install openpyxl
 # 双击 报价助手.vbs 启动，首次使用需登录 CMA 账号
 ```
 
-把 `settings.example.json` 复制为 `settings.json` 后按需修改。
+首次运行会使用默认设置，也可以在程序界面的「当前设置」里修改，或复制 `settings.example.json` 为 `settings.json` 手动配置。
 
 不想装环境？到 [Releases](https://github.com/Akash1QWQ/cma-spoton-suite/releases) 下载便携版压缩包，解压后双击 `报价助手.vbs` 即可运行，无需安装 Node 与 Python。
 
@@ -134,7 +134,7 @@ pip install openpyxl
 # double-click 报价助手.vbs, then log in to CMA once
 ```
 
-Copy `settings.example.json` to `settings.json` and adjust as needed.
+Default settings are used on first run; you can also change them in the app's Settings panel, or copy `settings.example.json` to `settings.json` to configure manually.
 
 Prefer no setup? Download the portable package from [Releases](https://github.com/Akash1QWQ/cma-spoton-suite/releases), unzip it and double-click `报价助手.vbs` — no Node.js or Python installation required.
 
