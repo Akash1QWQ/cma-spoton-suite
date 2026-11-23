@@ -23,18 +23,19 @@
 
 ```mermaid
 graph LR
-  UI[本地界面] --> S[本地服务]
-  S --> F[抓价]
-  S --> Q[合约建立]
-  S --> W[抢舱]
-  S --> I[后段测算]
-  F --> P[浏览器接口调用]
-  Q --> P
-  W --> P
-  I --> P
-  F --> X[Excel 生成]
-  Q --> X
-  I --> X
+  A[本地 Web UI<br/>HTML/JS] --> B[Node 本地服务<br/>server.js]
+  B --> C[抓价引擎<br/>fetch.js]
+  B --> D[合约建立<br/>contract_api.js]
+  B --> E[抢舱调度<br/>watch.js]
+  B --> F[后段测算<br/>inland.js]
+  C --> G[Playwright<br/>页面上下文调用私有接口]
+  D --> G
+  E --> G
+  F --> G
+  C --> H[Excel 生成<br/>Python + openpyxl]
+  D --> H
+  F --> H
+  G --> I[(CMA CGM SpotOn<br/>BFF API)]
 ```
 
 浏览器负责登录态与同源上下文，接口调用在页面内完成，Excel 由 Python 生成。

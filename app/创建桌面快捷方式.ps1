@@ -1,4 +1,4 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 try {
     $base = Split-Path -Parent $MyInvocation.MyCommand.Path
     if (-not $base) { $base = (Get-Location).Path }
@@ -9,7 +9,7 @@ try {
     foreach ($d in $iconDirs) {
         try {
             New-Item -ItemType Directory -Force -Path $d | Out-Null
-            Copy-Item (Join-Path $base "app.ico") (Join-Path $d "app.ico") -Force
+            $srcIco = Join-Path $base "app.ico"; if (-not (Test-Path $srcIco)) { $srcIco = Join-Path (Split-Path $base -Parent) "app.ico" }; Copy-Item $srcIco (Join-Path $d "app.ico") -Force
             $iconDir = $d
             break
         } catch { }
