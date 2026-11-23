@@ -629,6 +629,15 @@ async function ensureSession(ctx, page) {
     st = await apiStatus(page);
     if (st === 200) {
       await saveState(ctx).catch(() => {});
+      // 登录成功后页面可能还在跳转，等它回到报价页并稳定，否则随后的请求会被打断
+      try {
+        if (!/instant-Quoting/i.test(page.url())) {
+          await page.goto(QUOTE_URL, { waitUntil: 'domcontentloaded' });
+        }
+        await page.waitForLoadState('domcontentloaded');
+        await page.waitForTimeout(3000);
+        await dismissSessionModal(page);
+      } catch (_) {}
       console.log('登录成功，继续查询 ...');
       return true;
     }
