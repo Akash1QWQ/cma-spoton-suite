@@ -121,8 +121,29 @@ const r2 = (x) => Math.round(x * 100) / 100;
     await page.waitForTimeout(6500);
     await dismissSessionModal(page);
 
-    const pr = await api('GET', '/apigw/commercial/spoton/bff/v1/requestquotationpartners');
-    if (pr.status !== 200) throw new Error('登录态无效 HTTP ' + pr.status + '（先登录一次）');
+    let pr = await api('GET', '/apigw/commercial/spoton/bff/v1/requestquotationpartners');
+    if (pr.status !== 200) {
+      console.log('');
+      console.log('==========================================================');
+      console.log('  登录态已失效（HTTP ' + pr.status + '），需要重新登录 CMA CGM。');
+      console.log('  请在弹出的浏览器窗口里登录，登录完不用关窗口，程序会自己继续。');
+      console.log('  最多等 20 分钟。');
+      console.log('==========================================================');
+      const deadline = Date.now() + 20 * 60 * 1000;
+      while (Date.now() < deadline) {
+        await page.waitForTimeout(3000);
+        if (page.isClosed()) throw new Error('浏览器窗口被关闭');
+        await dismissSessionModal(page).catch(() => {});
+        pr = await api('GET', '/apigw/commercial/spoton/bff/v1/requestquotationpartners');
+        if (pr.status === 200) {
+          console.log('登录成功，继续计算后段费用 ...');
+          await page.goto(QUOTE_URL, { waitUntil: 'domcontentloaded' }).catch(() => {});
+          await page.waitForTimeout(3000);
+          break;
+        }
+      }
+      if (pr.status !== 200) throw new Error('等待登录超时（' + pr.status + '）');
+    }
     const partners = JSON.parse(pr.text).map((p) => p.Code);
     const today = new Date().toISOString().slice(0, 10);
 
