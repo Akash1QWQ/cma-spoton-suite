@@ -13,8 +13,7 @@ try {
 
 const PROFILE_DIR = path.join(__dirname, '.browser-profile');
 const STATE_FILE = path.join(__dirname, '.auth-state.json');
-const UA =
-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36';
+// 不覆盖 UA：使用浏览器真实 UA，版本对不上会被 WAF 判定为自动化
 
 const QUOTE_URL = 'https://www.cma-cgm.com/ebusiness/pricing/instant-Quoting';
 
@@ -57,7 +56,6 @@ async function launch(opts = {}) {
           viewport: null,
           args: ['--disable-blink-features=AutomationControlled', '--start-maximized'],
           locale: 'zh-CN',
-          userAgent: UA,
           acceptDownloads: true,
         });
         break;

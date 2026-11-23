@@ -67,7 +67,7 @@ const OPT = {
   only: arg('only', ''),
   group: arg('group', ''),
   equips: arg('equips', '20ST,40HC').split(',').filter(Boolean),
-  delay: Number(arg('delay', 2000)),
+  delay: Number(arg('delay', 3500)),
   outDir: arg('out', 'output'),
   fresh: arg('fresh', '0') === '1',
   withTotal: arg('withTotal', '1') !== '0',
@@ -875,7 +875,7 @@ async function fetchPending(pending, results, detailRows, codeUpdates) {
         ? `20GP ${out.rec['20GP']} / 40HQ ${out.rec['40HQ']} · ${out.rec['船名']} ${out.rec['预计开船']} ${out.rec['航程天数']}天 · 共 ${out.rec['总航次数']} 班`
         : '无报价 ' + out.rec['备注']}`);
     }
-    if (i < pending.length - 1) await sleep(OPT.delay + Math.random() * 800);
+    if (i < pending.length - 1) await sleep(OPT.delay + Math.random() * 2200);
   }
 
   await saveState(ctx).catch(() => {});
