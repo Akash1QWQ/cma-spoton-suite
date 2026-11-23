@@ -6,7 +6,7 @@ Dim sh, fso, base, nodeExe, url, i, browser, candidates, ok
 Set sh = CreateObject("WScript.Shell")
 Set fso = CreateObject("Scripting.FileSystemObject")
 
-base = fso.GetParentFolderName(WScript.ScriptFullName)
+base = fso.GetParentFolderName(WScript.ScriptFullName) & "\app"
 sh.CurrentDirectory = base
 url = "http://127.0.0.1:8899"
 
