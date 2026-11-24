@@ -281,6 +281,12 @@ const r2 = (x) => Math.round(x * 100) / 100;
           const v = et === '20ST' ? base['20GP'] : base['40HQ'];
           return typeof v === 'number' ? v : null;
         };
+        if (baseOf('20ST') == null && baseOf('40HC') == null) {
+          row['备注'] = '前段表里该港口无价格';
+          out.push(row);
+          console.log(`[${i}/${lanes.length}] ${podName} 前段表里无价格`);
+          continue;
+        }
         const pair = {};   // et -> { av, bv }
         const seenMax = {};
         for (const b of bSorted.slice(0, 12)) {
@@ -319,6 +325,9 @@ const r2 = (x) => Math.round(x * 100) / 100;
             }
           }
         }
+
+        const usedKey = (pair['20ST'] || pair['40HC'] || {}).key;
+        if (usedKey) row['基准船名/航次'] = usedKey.replace('|', ' / ');
 
         if (!pair['20ST'] && !pair['40HC']) {
           row['备注'] = '内陆点无费用明细';
