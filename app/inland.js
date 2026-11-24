@@ -270,72 +270,63 @@ const r2 = (x) => Math.round(x * 100) / 100;
         if (!fpod) { row['备注'] = '内陆点未找到'; out.push(row); console.log(`[${i}/${lanes.length}] ${podName}→${fpodName} 内陆点未找到`); continue; }
 
         console.log(`[${i}/${lanes.length}] ${podName}→${fpodName} ${lane.Mode} ${w20}/${w40} 查询中…`);
-        const aRoutes = await search(podCode, null, null, w20, w40);
         const bRoutes = await search(podCode, fpod, haulage, w20, w40);
-        console.log(`      基本港 ${aRoutes.length} 条 / 内陆 ${bRoutes.length} 条`);
+        console.log(`      内陆 ${bRoutes.length} 条`);
         const want = `${wantVessel}|${wantVoyage}`;
-        const aSorted = [...aRoutes].sort((x, y) => (keyOf(x) === want ? -1 : 0) - (keyOf(y) === want ? -1 : 0));
         const bSorted = [...bRoutes].sort((x, y) => (keyOf(x) === want ? -1 : 0) - (keyOf(y) === want ? -1 : 0));
-
-        if (!aSorted.length) { row['备注'] = '基本港无报价'; out.push(row); console.log(`[${i}/${lanes.length}] ${podName} 基本港无报价`); continue; }
         if (!bSorted.length) { row['备注'] = '内陆点无报价'; out.push(row); console.log(`[${i}/${lanes.length}] ${podName}→${fpodName} 内陆点无报价`); continue; }
 
-        // 逐条配对找「两边都有费用明细」的同一条船（优先基准船期）
-        // 逐条船配对：谁的明细全就用谁的，20ST 和 40HC 可以来自不同的船，但必须「同一船前后段成对」
-        const pair = {};   // et -> { av, bv, key }
-        let aHit = null, bHit = null, ta = {}, tb = {};
+        // 前段价格固定取报价表（港口到港口的价格）——港口到港口经常无舱，但内陆路线有舱
+        const baseOf = (et) => {
+          const v = et === '20ST' ? base['20GP'] : base['40HQ'];
+          return typeof v === 'number' ? v : null;
+        };
+        const pair = {};   // et -> { av, bv }
         const seenMax = {};
         for (const b of bSorted.slice(0, 12)) {
-          const a = aSorted.find((h) => keyOf(h) === keyOf(b));
-          if (!a) continue;
-          const t1 = await totals(a.OfferId);
           const t2 = await totals(b.OfferId);
-          if (process.env.LOGPAIR) console.log('PAIR ' + keyOf(b) + ' | A:' + (t1.__chg?'noCharge':'ok') + ' ' + (t1.__eq||'') + ' | B:' + (t2.__chg?'noCharge':'ok') + ' ' + (t2.__eq||''));
+          if (process.env.LOGPAIR) console.log('PAIR ' + keyOf(b) + ' | B:' + (t2.__chg ? 'noCharge' : 'ok') + ' ' + (t2.__eq || ''));
           for (const et of ['20ST', '40HC']) {
-            const m = (t2.__max && t2.__max[et]) || (t1.__max && t1.__max[et]);
+            const m = t2.__max && t2.__max[et];
             if (typeof m === 'number' && m > 0 && (!seenMax[et] || m > seenMax[et])) seenMax[et] = m;
             if (pair[et]) continue;
-            if (t1[et] && t1[et].price != null && t2[et] && t2[et].price != null) {
-              pair[et] = { av: t1[et].price, bv: t2[et].price, key: keyOf(b) };
-            }
+            const av = baseOf(et);
+            const bv = t2[et] && t2[et].price != null ? t2[et].price : null;
+            if (av != null && bv != null) pair[et] = { av, bv, key: keyOf(b) };
           }
-          if (pair['20ST'] && pair['40HC']) { aHit = a; bHit = b; ta = t1; tb = t2; break; }
-          if (!aHit) { aHit = a; bHit = b; ta = t1; tb = t2; }
+          if (pair['20ST'] && pair['40HC']) break;
         }
+
         // 全都因为「超过允许重量」被拒 → 降到该航线允许的重量再查一次
-        const emptyPair = !pair['20ST'] && !pair['40HC'];
-        if (emptyPair && Object.keys(seenMax).length) {
+        if (!pair['20ST'] && !pair['40HC'] && Object.keys(seenMax).length) {
           const w2 = Math.min(w20, seenMax['20ST'] || w20);
           const w4 = Math.min(w40, seenMax['40HC'] || w40);
           if (w2 < w20 || w4 < w40) {
             console.log(`      超过允许重量，改按 ${w2}/${w4} KGM 重查`);
-            const a2 = await search(podCode, null, null, w2, w4);
             const b2 = await search(podCode, fpod, haulage, w2, w4);
-            for (const b of [...b2].slice(0, 12)) {
-              const a = a2.find((h) => keyOf(h) === keyOf(b));
-              if (!a) continue;
-              const t1 = await totals(a.OfferId);
+            for (const b of b2.slice(0, 12)) {
               const t2 = await totals(b.OfferId);
               for (const et of ['20ST', '40HC']) {
                 if (pair[et]) continue;
-                if (t1[et] && t1[et].price != null && t2[et] && t2[et].price != null) {
-                  pair[et] = { av: t1[et].price, bv: t2[et].price, key: keyOf(b) };
+                const av = baseOf(et);
+                const bv = t2[et] && t2[et].price != null ? t2[et].price : null;
+                if (av != null && bv != null) {
+                  pair[et] = { av, bv, key: keyOf(b) };
                   row['备注'] = `按 ${et === '20ST' ? w2 : w4} KGM 计`;
                 }
               }
               if (pair['20ST'] && pair['40HC']) break;
             }
-            if (!aHit && (pair['20ST'] || pair['40HC'])) { aHit = a2[0] || a; bHit = b; }
           }
         }
 
-        // 没有「同一条船且两边都有费用明细」的组合 → 不硬凑，直接标无同航次
-        if (!aHit) {
-          row['备注'] = '无同航次报价';
+        if (!pair['20ST'] && !pair['40HC']) {
+          row['备注'] = '内陆点无费用明细';
           out.push(row);
-          console.log('[' + i + '/' + lanes.length + '] ' + podName + '→' + fpodName + ' 无同航次报价');
+          console.log(`[${i}/${lanes.length}] ${podName}→${fpodName} 内陆点无费用明细`);
           continue;
         }
+
         const oceanOf = (h, et) => {
           const e = (h.Equipments || []).find((x) => x.EquipmentSizeType === et);
           return e && typeof e.OceanFreightRate === 'number' ? e.OceanFreightRate : null;
