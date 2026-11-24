@@ -175,4 +175,20 @@ async function dismissSessionModal(page, opts = {}) {
   return true;
 }
 
-module.exports = { PROFILE_DIR, STATE_FILE, QUOTE_URL, isLoginUrl, launch, saveState, getPage, dismissSessionModal };
+// 检测是否停在人机验证页（DataDome 滑块）
+async function isCaptcha(page) {
+  try {
+    const url = page.url();
+    if (/captcha|datadome|blocked/i.test(url)) return true;
+    const txt = await page.evaluate(() => {
+      const t = document.body ? document.body.innerText : '';
+      return t.slice(0, 400);
+    }).catch(() => '');
+    if (/向右滑动|滑动以保护|verify you are human|访问暂时受限|访问受限/i.test(txt)) return true;
+    const frames = page.frames().map((f) => f.url()).join(' ');
+    if (/datadome|captcha/i.test(frames)) return true;
+  } catch (_) {}
+  return false;
+}
+
+module.exports = { PROFILE_DIR, STATE_FILE, QUOTE_URL, isLoginUrl, launch, saveState, getPage, dismissSessionModal, isCaptcha };

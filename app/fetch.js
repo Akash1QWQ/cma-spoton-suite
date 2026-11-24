@@ -12,7 +12,7 @@
 const fs = require('fs');
 const path = require('path');
 const { spawn } = require('child_process');
-const { launch, getPage, QUOTE_URL, isLoginUrl, saveState, dismissSessionModal } = require('./lib');
+const { launch, getPage, QUOTE_URL, isLoginUrl, saveState, dismissSessionModal, isCaptcha } = require('./lib');
 
 // 登录过期时弹一个 Windows 提示框 + 把浏览器窗口调到最前，免得错过
 function notifyLogin(page) {
@@ -653,7 +653,14 @@ async function ensureSession(ctx, page) {
       await page.goto(QUOTE_URL, { waitUntil: 'domcontentloaded' }).catch(() => {});
       await page.waitForTimeout(2500);
     }
-    if (Date.now() - lastLog > 30000) { lastLog = Date.now(); console.log('  ... 等待登录中'); }
+    if (Date.now() - lastLog > 30000) {
+      lastLog = Date.now();
+      if (await isCaptcha(page)) {
+        console.log('  ... 窗口里出现了人机验证，请拖动滑块完成验证（完成后无需操作，程序会自动继续）');
+      } else {
+        console.log('  ... 等待登录中');
+      }
+    }
   }
   return false;
 }
